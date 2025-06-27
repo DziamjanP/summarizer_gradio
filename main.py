@@ -4,6 +4,10 @@ import gradio as gr
 
 demo = gr.Blocks(title="Summary maker")
 
+def make_summary(input):
+  output = summarize(input)
+  return [gr.update(value=output), gr.update(value=output)]
+    
 with demo:
     gr.Markdown(
     """
@@ -16,8 +20,11 @@ with demo:
         upload = gr.File(label="File with text", file_types=[".pdf"])
         submit = gr.Button("Summarize!")
       with gr.Column():
-        out = gr.Textbox(label="Summary")
-    submit.click(summarize, inp, out)
+        with gr.Tab("Text output"):
+          out = gr.Textbox(label="Summary")
+        with gr.Tab("Markdown"):
+          out_md = gr.Markdown(label="Summary")
+    submit.click(make_summary, inp, outputs=[out, out_md])
     upload.upload(parse_pdf, inputs=upload, outputs=inp)
 
 demo.launch()
