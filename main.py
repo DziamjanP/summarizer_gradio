@@ -2,7 +2,7 @@ from summary import summarize
 from parser import parse_pdf
 import gradio as gr
 
-demo = gr.Blocks()
+demo = gr.Blocks(title="Summary maker")
 
 with demo:
     gr.Markdown(
