@@ -213,7 +213,7 @@ def parse_pdf(pdf_path):
 
         # Add the list of list as value of the page        
         # text_per_page.append([page_text, line_format, text_from_images,text_from_tables, page_content])
-        text_per_page.append(' '.join(page_text))
+        text_per_page.append(' '.join(page_content))
 
     # Close the pdf file object
     pdfFileObj.close()
