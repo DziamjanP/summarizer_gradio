@@ -2,3 +2,4 @@
 venv
 sums
 texts
+__pycache__
