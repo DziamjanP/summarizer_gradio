@@ -18,6 +18,7 @@ Perform these actions:
    - Preserve EXISTING information from EXISTING_SUMMARY  
    - Integrate NEW information from NEW_TEXT_CHUNK  
    - Prioritize shortness over perfect detail  
+   - Summary MUST reflect WHOLE text's contents, NOT ONLY NEW_TEXT_CHUNK's contents
 
 4. **Structural Requirements**:  
    - Maintain original bullet-point format  
