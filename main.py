@@ -25,7 +25,8 @@ with demo:
       with gr.Column():
         inp = gr.Textbox(label="Input", placeholder="Your text")
         upload = gr.File(label="File with text", file_types=[".pdf"])
-        model_selector = gr.Dropdown(choices=models.keys())
+        with gr.Accordion("LLM selection", open=False):
+          model_selector = gr.Dropdown(choices=models.keys())
         submit = gr.Button("Summarize!")
       with gr.Column():
         with gr.Tab("Text output"):
