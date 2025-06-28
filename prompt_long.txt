@@ -17,6 +17,7 @@ Perform these actions:
 3. **Information Integration**:  
    - Preserve EXISTING information from EXISTING_SUMMARY  
    - Integrate NEW information from NEW_TEXT_CHUNK  
+   - Replace or shorten EXISTING information with NEW if necessary  
    - Prioritize shortness over perfect detail  
    - Summary MUST reflect WHOLE text's contents, NOT ONLY NEW_TEXT_CHUNK's contents
 
