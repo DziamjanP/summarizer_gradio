@@ -6,10 +6,10 @@ demo = gr.Blocks(title="Summary maker", fill_height=True)
 
 # Model aliases for dropdown and their names in APIs
 models = {
-  "Mistral Medium": "mistral-medium-2505",
   "Magistral Medium": "magistral-medium-2506",
-  "Llama 3.3 70B": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+  "Mistral Medium": "mistral-medium-2505",
   "Deepseek R1 Distill Llama 70B": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",
+  "Llama 3.3 70B": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
 }
 
 def make_summary(input, model):
