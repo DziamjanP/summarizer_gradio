@@ -49,17 +49,20 @@ These models were tested through human evaluation and came out with results:
   - Worse prompt following
   - Can produce too long unstructured summaries
 - DeepSeek-R1-Distill-Llama-70B-free (together.ai)
+  - Is a reasoning model
   - Higher latency
   - Needs careful prompt adjusting, still barely follows them
-  - Good summary quality with right prompt and a bit of luck
+  - Produces too long summaries sometimes
 - magistral-medium (mistral api)
   - Is a reasoning model
+  - Lower reasoning compared to DeepSeek
   - Best summary quality relative to other models
   - Good prompt following
 - mistral-medium (mistral api)
   - Similar to magistral medium
-  - Worse summary quality
-  - Worse prompt understanding
+  - Lower latency
+  - Worse summary quality compared to magistral
+  - Worse prompt understanding compared to magistral
 
 LLM benchmarks like livebench and model usage prices (only free ones were used) were taken into account. The final choice was magimistral-medium.
 
