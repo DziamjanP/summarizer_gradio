@@ -62,3 +62,7 @@ These models were tested through human evaluation and came out with results:
   - Worse prompt understanding
 
 LLM benchmarks like livebench and model usage prices (only free ones were used) were taken into account. The final choice was magimistral-medium.
+
+# Examples
+Examples of a summary are in the `examples` directory.
+`N.txt` contains text or links and `N.md` contains summaries.
