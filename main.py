@@ -15,7 +15,13 @@ models = {
 def make_summary(input, model):
   output = summarize(input, models[model])
   return [gr.update(value=output), gr.update(value=output)]
-    
+
+def parse_file(path):
+  if (path.endswith(".pdf")):
+    return parse_pdf(path)
+  elif (path.endswith(".txt")):
+    return open(path).read()
+
 with demo:
     gr.Markdown(
     """
@@ -26,7 +32,7 @@ with demo:
       
       with gr.Column():
         inp = gr.Textbox(label="Input", placeholder="Your text")
-        upload = gr.File(label="File with text", file_types=[".pdf"])
+        upload = gr.File(label="File with text", file_types=[".pdf", ".txt"])
         with gr.Accordion("LLM selection", open=False):
           model_selector = gr.Dropdown(choices=models.keys())
         submit = gr.Button("Summarize!")
@@ -39,6 +45,6 @@ with demo:
 
     submit.click(make_summary, inputs=[inp, model_selector], outputs=[out, out_md])
     
-    upload.upload(parse_pdf, inputs=upload, outputs=inp)
+    upload.upload(parse_file, inputs=upload, outputs=inp)
 
 demo.launch()
